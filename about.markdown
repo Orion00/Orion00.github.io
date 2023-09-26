@@ -4,5 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Change this text with information about me and my blog.
+AI Generated images are with the use of Dall-E with the prompts:
+
+CatLaptop - "Drawing of a cat typing on a laptop"
+
+Cthulhu Business - "Painting of Cthulhu in a business suit on a zoom call"
 
