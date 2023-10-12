@@ -11,7 +11,7 @@ image: "/assets/images/AIGenerated/FutureTypewriter.png"
 # Simplest List Comprehension
 iterable = [1,2,3,4,5,6,7,8,9,10]
 def funct(x):
-    return x**2
+    return x
 [funct(item) for item in iterable]
 
 # List Comprehension with condition on iterable
@@ -25,7 +25,7 @@ iterable = [1,2,3,4,5,6,7,8,9,10]
 def funct1(x):
     return x
 def funct2(x):
-    return x/10
+    return 0
 def condition(x):
     return x>5 or x%2==0
 [funct1(item) if condition(item) else funct2(item) for item in iterable]
@@ -43,13 +43,15 @@ This blog post aims to be those quick reference instructions, copy and paste-abl
 
 So let's get into it.
 
+
 ## Simplest List Comprehension
 
-The simplest list comprehension you can do involves taking a preexisting iterator (lists, tuples, dictionaries, sets, etc) and applying a function to each item in that iterator. For example, you might want to emphasize something by converting a list of strings (like a sentence) to all caps (but still a list of strings).
+The simplest list comprehension you can do involves taking a preexisting iterator (lists, tuples, dictionaries, sets, etc) and applying a function to each item in that iterator. For example, you might want to emphasize something by converting a list of strings (like a sentence) to all caps (but still have a list of strings).
 
 ```python
 sentence = ["putting","together","furniture","is","hard!"]
 new_sentence = [word.upper() for word in sentence]
+> ['PUTTING', 'TOGETHER', 'FURNITURE', 'IS', 'HARD!']
 ```
 
 Or round each number in a list to a certain place.
@@ -57,6 +59,7 @@ Or round each number in a list to a certain place.
 ```python
 cost_of_new_tables = [39.40,39.40,39.40,65.99]
 rounded_costs = [round(num) for num in cost_of_new_tables]
+> ['$39', '$39', '$39', '$66']
 ```
 These are relatively simply functions to perform on the items of our iterables, but what if your function is fairly messy?
 
@@ -67,6 +70,7 @@ rounded_costs = [39, 39, 39, 66]
 def funct(x):
     return "$"+str(x)
 rounded_costs_units = [funct(num) for num in rounded_costs]
+> ['$39', '$39', '$39', '$66']
 
 ```
 
@@ -78,9 +82,36 @@ Or a more general form:
 
 "For every item in my iterable, apply this function to it, then add the result to my new list.
 
-## List Comprehension with condition on iterable
+
+## List Comprehension with conditions
 
 Let's try something trickier. What if we wanted to filter our iterable so it only contained items that met a condition?
 
+```python
+monthly_furniture_costs = [0,20.99, 0, 0, 0, 0, 0, 0, 65.99, 184.19, 33.21, 5.45]
+def condition(x):
+    return x>0
+nonzero_furniture_costs = [item for item in monthly_furniture_costs if condition(item)]
+> [20.99, 65.99, 184.19, 20.99, 5.45]
+```
+You'll want to write the condition after the iterable so it only returns items from that iterable that meet the condition.
 
+What if, instead, we wanted to apply the function based on a condition?
 
+```python
+monthly_furniture_costs = [0,20.99, 0, 0, 0, 0, 0, 0, 65.99, 184.19, 33.21, 5.45]
+def funct1(x):
+    return x
+def funct2(x):
+    return 0
+def condition(x):
+    return x>30.00
+costs_caused_by_the_cat = [funct1(item) if condition(item) else funct2(item) for item in monthly_furniture_costs]
+> [0, 0, 0, 0, 0, 0, 0, 0, 65.99, 184.19, 33.21, 0]
+```
+For each of these examples, you don't need to write a function to test. Most of the time, you'll just write in the conditional instead of writing a function that checks the conditional.
+
+## Wrap Up
+So that's it, 3 ways to use list comprehension in Python. Feel free to copy, paste, and change as necessary.
+
+Now if you excuse me, I have move my cat off the table again.
