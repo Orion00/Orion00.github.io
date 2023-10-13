@@ -66,7 +66,7 @@ Or round each number in a list to a certain place.
 ```python
 cost_of_new_tables = [39.40,39.40,39.40,65.99]
 rounded_costs = [round(num) for num in cost_of_new_tables]
-> ['$39', '$39', '$39', '$66']
+> [39, 39, 39, 66]
 ```
 These are relatively simply functions to perform on the items of our iterables, but what if your function is fairly messy?
 
@@ -83,11 +83,11 @@ rounded_costs_units = [funct(num) for num in rounded_costs]
 
 Reading this comprehension in English might look something like this:
 
-"For every number in my list, add a $, then add it to my new list as a string.
+"For every number in my list, add a $, then add it to my new list as a string."
 
 Or a more general form:
 
-"For every item in my iterable, apply this function to it, then add the result to my new list.
+"For every item in my iterable, apply this function to it, then add the result to my new list."
 
 
 ## List Comprehension with Conditions
@@ -116,7 +116,7 @@ def condition(x):
 costs_caused_by_the_cat = [funct1(item) if condition(item) else funct2(item) for item in monthly_furniture_costs]
 > [0, 0, 0, 0, 0, 0, 0, 0, 65.99, 184.19, 33.21, 0]
 ```
-For each of these examples, you don't need to write a function to test. Most of the time, you'll just write in the conditional instead of writing a function that checks the conditional.
+Most of the time, instead of defining separate functions, you'll find it's easier to just write the code inside the list comprehension. I've included separate functions in case you do have a more complex operation and want to know how to do it.
 
 ## Wrap Up
 So that's it, 3 ways to use list comprehension in Python. Hopefully you can walk away feeling a little more confident reading other people's code or writing your own. So get out there and unpack some furniture!
