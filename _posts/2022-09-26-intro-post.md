@@ -3,7 +3,7 @@ layout: post
 title:  "First Post"
 author: Orion Bowers
 description: Testing communication systems   
-image: "/assets/images/AIGenerated/CatLaptop.png"
+image: "/assets/images/AIGenerated/DALL-E/CatLaptop.png"
 ---
 
 *tap* *tap* *tap* Is this thing on?

@@ -3,7 +3,7 @@ layout: post
 title:  "Copy and Paste-able Python List Comprehension"
 author: Orion Bowers
 description: "A simple tutorial on using python list comprehension" 
-image: "/assets/images/AIGenerated/FutureTypewriter.png"
+image: "/assets/images/AIGenerated/DALL-E/FutureTypewriter.png"
 ---
 # Introduction
 Have you ever gone out and bought yourself some Scandinavian furniture in a box?
