@@ -3,7 +3,7 @@ layout: post
 title:  "Good Games Analysis: Part 1 (Data Collection and Cleaning)"
 author: Orion Bowers
 description: "Insights about highest rated board games according to BoardGameGeek" 
-image: "/assets/images/AIGenerated/FutureTypewriter.png"
+image: "/assets/images/AIGenerated/freekpik/catinbox.png"
 ---
 # Introduction
 
@@ -55,7 +55,8 @@ Checking BGG's robots.txt, they ask for a crawl delay of 5 seconds. My scraper a
 
 The API [terms of use](https://boardgamegeek.com/wiki/page/XML_API_Terms_of_Use) are fairly straightforward. Anyone can reproduce and publicly display the data as long as they a) don't use it commerically without permission, b) don't modify the data, c) credit Board Game Geek, and d) show off their sweet API logo.
 
-![Board Game Geek API logo](/assets/images/goodgames/bggAPILogo.jpeg)
+<!-- <img src="{{site.url}}/{{site.baseurl}}/assets/images/AIGenerated/DALL-E/CatLaptop.png" alt="" style="width:100px;"/> -->
+![Board Game Geek API logo]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/bggAPILogo.jpeg)
 
 In the API documentation, the author noted "if you send requests too frequently, the server will give you 500 or 503 return codes, reporting that it is too busy. Currently, a 5-second wait between requests seems to suffice." This seems more like advice if the requests aren't working and less like a specific time delay, so I used a short time delay (as well as the length of time it took to run the script) and didn't have any issues.
 
