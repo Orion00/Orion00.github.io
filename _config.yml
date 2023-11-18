@@ -18,7 +18,7 @@ email: Null
 description: "A resource for writing, learning, and teaching Data Science" 
 baseurl: "tinyproject"
 url: "https://Orion00.github.io"
-image: assets/images/AIGenerated/CatLaptop.png
+image: "assets/images/AIGenerated/DALL-E/CatLaptop.png"
 author: Orion
 copyright: Null
 footer_description: Null
