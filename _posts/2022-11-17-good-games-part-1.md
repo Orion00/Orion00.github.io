@@ -2,7 +2,7 @@
 layout: post
 title:  "Good Games Analysis: Part 1 (Data Collection and Cleaning)"
 author: Orion Bowers
-description: "Insights about highest rated board games according to BoardGameGeek" 
+description: "Web scraping data about the highest rated board games according to BoardGameGeek" 
 image: "/assets/images/AIGenerated/freepik/catinbox.png"
 ---
 # Introduction

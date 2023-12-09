@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-AI Generated images are with the use of Dall-E 2 with the prompts:
+AI Generated images are with the use of generative AI with the prompts:
+
+## Dall-E 2
 
 <img src="{{site.url}}/{{site.baseurl}}/assets/images/AIGenerated/DALL-E/CatLaptop.png" alt="" style="width:100px;"/>
 Cat Laptop - "Drawing of a cat typing on a laptop"
@@ -21,6 +23,8 @@ Cool Goose - "Impressionist painting of a goose wearing a trenchcoat and sunglas
 <img src="{{site.url}}/{{site.baseurl}}/assets/images/AIGenerated/DALL-E/FutureTypewriter.png" alt="" style="width:100px;"/>
 Future Typewriter - "Painting of a typewriter in a futuristic sci fi background"
 
+## Freepik
+
 <img src="{{site.url}}/{{site.baseurl}}/assets/images/AIGenerated/freepik/catinbox.png" alt="" style="width:100px;"/>
-Cat In Box - "drawing of Cat sitting in a board game box"
+Cat In Box - "Drawing of Cat sitting in a board game box"
 
