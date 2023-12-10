@@ -68,4 +68,4 @@ My biggest question when starting this project was "what game mechanics make a p
 Is this really the answer to my question? I guess we'll have to wait to find out.
 
 # Wrap Up
-So there you have it. Web scraping and APIs for one of my favorite hobbies. Stay tuned for Part 2: The Answers the Data Gave.
+So there you have it. Web scraping and APIs for one of my favorite hobbies. Stay tuned for [Part 2: The Answers the Data Gave](/_posts/2022-12-9-good-games-part-2.md).
