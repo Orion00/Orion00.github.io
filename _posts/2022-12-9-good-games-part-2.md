@@ -51,7 +51,7 @@ mechanics - List of mechanics for that game. Each mechanic is also one hot encod
 
 Looking at the dataset, one of the first things I noticed was the inclusion of absurdly long playing times. One of my current favorite games to play is Arkham Horror: the Card Game (Rank 27 in this dataset). In my experience, it takes a good 2.5 hours to a single scenario, and there are about 8 missions in a campaign. That's a 20+ hour commitment to play the same game with the same people 8 times. When reporting playing time, Arkham Horror counted a single mission as the playing time, which seems reasonable. Not every game did that, resulting in skewing my beautiful plots.
 
-[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTime.png" style="width:450px;"/>](/assets/images/goodgames/minPlayersvsPlayTime.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTimeEdited.png" style="width:450px;"/>](/assets/images/goodgames/minPlayersvsPlayTimeEdited.png)
+[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTime.png" style="width:415px;float: left;"/>](/assets/images/goodgames/minPlayersvsPlayTime.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTimeEdited.png" style="width:415px;float: right;"/>](/assets/images/goodgames/minPlayersvsPlayTimeEdited.png)
 
 Sleepings Gods and The 7th Continent boast playing times of 20 hours and 16.67 hours respectively. Looking deeper into both, they're both campaign games like Arkham Horror. I've not played either game, but I feel it's safe to assume both don't require 15+ hours of play in one sitting.
 
@@ -79,20 +79,19 @@ In addition to some interesting outliers, this plot does answer another question
 
 Finally! My initial question. What mechanics are the most popular? Unfortunately it's not that simple to answer. You see, for fun I decided to make the same plot with the 500 top games, 100 top games, and 50 top games Board Game Geek has to offer. And the top mechanics changed! That's cheating!
 
-[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics500.png" style="width:300px;"/>](/assets/images/goodgames/mostFreqMechanics500.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics100.png" style="width:300px;"/>](/assets/images/goodgames/mostFreqMechanics100.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics50.png" style="width:300px;"/>](/assets/images/goodgames/mostFreqMechanics50.png)
+[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics500.png" style="width:60%px;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics500.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics100.png" style="width:80%;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics100.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics50.png" style="width:100%;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics50.png)
 
 Thankfully, there are a few mechanics that stick around in all 3 plots. Hand management, Variable Player Powers (one of my personal favorite mechanics), Dice Rolling, Solo Games, and 
 
 ## Insight: These variables do not correlate well with each other
 
+Honestly, I expected the variables in this dataset to be better predictors of each other than they are. Amazon price has a .97 correlation value with list price, but I'd hope it's that high because list price is partially based on amazon price! Past that, the next two highest correlation values are BGG rating and rank (-.93) and Player rating and BGG Rating (.65). In both cases, the second depends on the first. Ignoring variables that depend on each other, the only correlation pair that might be significant is list price and average rating, but that's only got a value of .59.
+
 ![A Correlation Matrix of Numerical Variables]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/correlationMatrix.png)
 
+Moving past correlation, this graph is an excellent descriptor for how BGG rating is calculated. If you recall from earlier (or scroll up a few times), you'll remember that BGG rating is a rating that weights games (especially games with a low number of reviews) closer to 5.5. You can visually see how each Average rating score was converted to a BGG rating. The further the distance between the two points in the same rank, the fewer the reviewers there are.
+
 ![Rank vs Rating by Rating Type]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/rankvsRating.png)
-
-
-Dashboard: EDA based on mechanics
-
-
 
 # Wrapup
 
