@@ -3,7 +3,7 @@ layout: post
 title:  "Good Games Analysis: Part 2 (The Answers the Data Gave)"
 author: Orion Bowers
 description: "Insights about highest rated board games according to BoardGameGeek" 
-image: "/assets/images/AIGenerated/freepik/catinbox.png"
+image: "/assets/images/AIGenerated/DALL-E/LoadedDie.png"
 ---
 # Introduction
 
@@ -19,11 +19,9 @@ With that out of the way, let's get to the data science stuff.
 
 # Variables
 
-Because of the one hot encoding I did to analyze mechanics, our dataset is 500 rows by 187 columns. You can view all the information in the first 12 rows. In no particular order, here's a breakdown of each variable:
+Because of the one hot encoding I did to analyze mechanics, our dataset is 500 rows by 187 columns. However, all the information is more easily readable just in the first 12 rows. In no particular order, here's a breakdown of each variable:
 
 ![First 5 rows of dataset]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/full_data_head.png)
-
-![First 5 rows of dataset](/assets/images/goodgames/full_data_head.png)
 
 Rank - Rank between 1 (highest rated) and 500 (lowest rated)
 
@@ -33,7 +31,7 @@ BGG_rating - Rating out of 10. Based on Average rating, but weighted towards 5.5
 
 avg_rating - Rating out of 10. Average rating for that game calculated using BGG users. More information on BGG's [FAQ](https://boardgamegeek.com/wiki/page/BoardGameGeek_FAQ).
 
-list_price - 
+list_price - Suggested retail price. It seems to be based on prices of several places to buy the game.
 
 amazon_price - Price on Amazon.com. Updated several times a day.
 
@@ -51,14 +49,9 @@ mechanics - List of mechanics for that game. Each mechanic is also one hot encod
 
 ## Insight: Some games are really long
 
-Looking at the dataset, one of the first things I noticed was the inclusion of absurdly long playing times. One of my current favorite games to play is Arkham Horror: the Card Game (Rank 27 in this dataset). In my experience, it takes a good 2.5 hours to a single scenario, and there are about 8 missions in a scenario. That's a 20+ hour commitment to play the same game with the same people 8 times. When reporting playing time, Arkham Horror counted a single mission as the playing time, which seems reasonable. Not every game did that, resulting in skewing my beautiful plots.
+Looking at the dataset, one of the first things I noticed was the inclusion of absurdly long playing times. One of my current favorite games to play is Arkham Horror: the Card Game (Rank 27 in this dataset). In my experience, it takes a good 2.5 hours to a single scenario, and there are about 8 missions in a campaign. That's a 20+ hour commitment to play the same game with the same people 8 times. When reporting playing time, Arkham Horror counted a single mission as the playing time, which seems reasonable. Not every game did that, resulting in skewing my beautiful plots.
 
-![Minimum Number of Players vs Playing Time](/assets/images/goodgames/minPlayersvsPlayTime.png)
-![Minimum Number of Players vs Playing Time, outliers removed](/assets/images/goodgames/minPlayersvsPlayTimeEdited.png)
-
-![Minimum Number of Players vs Playing Time](/assets/images/goodgames/minPlayersvsPlayTime.png) ![Minimum Number of Players vs Playing Time, outliers removed](/assets/images/goodgames/minPlayersvsPlayTimeEdited.png)
-
-[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTime.png" style="width:200px;"/>](/assets/images/goodgames/minPlayersvsPlayTime.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTimeEdited.png" style="width:200px;"/>](/assets/images/goodgames/minPlayersvsPlayTimeEdited.png)
+[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTime.png" style="width:450px;"/>](/assets/images/goodgames/minPlayersvsPlayTime.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/minPlayersvsPlayTimeEdited.png" style="width:450px;"/>](/assets/images/goodgames/minPlayersvsPlayTimeEdited.png)
 
 Sleepings Gods and The 7th Continent boast playing times of 20 hours and 16.67 hours respectively. Looking deeper into both, they're both campaign games like Arkham Horror. I've not played either game, but I feel it's safe to assume both don't require 15+ hours of play in one sitting.
 
@@ -68,15 +61,17 @@ What I can tell is that if you're looking to play popular games solo or with one
 
 I was also curious if games had gotten longer over the years. Ignoring games from before 1980, it looks like playing time has increased, but not by much. Modern game design has changed board games a lot but game length doesn't seem to have changed as much as I expected.
 
-![Year Published vs Playing Time](/assets/images/goodgames/yearvsPlayTime.png)
+![Year Published vs Playing Time]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/yearvsPlayTime.png)
 
 ## Insight: Some games are really expensive
 
 Similar to playing time, there are some impressive outliers in the price department of these games. (Side note: I decided to use Amazon's price rather than the list price BGG provides because there were more games with an Amazon price than with a list price.)
 
-![Year Published vs Amazon Price](/assets/images/goodgames/yearvsPrice.png)
+![Year Published vs Amazon Price]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/yearvsPrice.png)
 
-Do you see the price of some of those games? $800 for some cardboard? While I do believe board games actually provide a superb bang for your buck, I don't know if I'll be spending $800 on a game anytime soon. Once again, some games may be reporting prices differently than others. Arkham Horror is listed at $23.88 on Amazon. What that doesn't include is the dozens of expansions, some of which are pricier than the base game. I'm not sure I want to add up how much I've spent on Arkham Horror, but I can somewhat mostly guarantee it's short of $800 (probably).
+Do you see the price of some of those games? $800 for some cardboard? While I do believe board games actually provide a superb bang for your buck, I don't know if I'll be spending $800 on a game anytime soon... 
+
+...or will I? Arkham Horror is listed at $23.88 on Amazon. While that's true for the base game, what that price doesn't include is the dozens of expansions, some of which are pricier than the base game. I'm not sure I want to add up how much I've spent on Arkham Horror, but I can somewhat mostly guarantee it's short of $800 (probably).
 
 In addition to some interesting outliers, this plot does answer another question I had. Do games go up in price as the years go on? I would say yes, there is some sort of trend upward there. Is it a significant amount when considering inflation? I'm not sure. But my gut says yes, prices are going up.
 
@@ -84,12 +79,15 @@ In addition to some interesting outliers, this plot does answer another question
 
 Finally! My initial question. What mechanics are the most popular? Unfortunately it's not that simple to answer. You see, for fun I decided to make the same plot with the 500 top games, 100 top games, and 50 top games Board Game Geek has to offer. And the top mechanics changed! That's cheating!
 
-[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics500.png" style="width:200px;"/>](/assets/images/goodgames/mostFreqMechanics500.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics100.png" style="width:200px;"/>](/assets/images/goodgames/mostFreqMechanics100.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics50.png" style="width:200px;"/>](/assets/images/goodgames/mostFreqMechanics50.png)
+[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics500.png" style="width:300px;"/>](/assets/images/goodgames/mostFreqMechanics500.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics100.png" style="width:300px;"/>](/assets/images/goodgames/mostFreqMechanics100.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics50.png" style="width:300px;"/>](/assets/images/goodgames/mostFreqMechanics50.png)
 
-At the very least, there are a few mechanics that stick. Hand management (one of my personal favorite mechanics), 
+Thankfully, there are a few mechanics that stick around in all 3 plots. Hand management, Variable Player Powers (one of my personal favorite mechanics), Dice Rolling, Solo Games, and 
 
 ## Insight: These variables do not correlate well with each other
 
+![A Correlation Matrix of Numerical Variables]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/correlationMatrix.png)
+
+![Rank vs Rating by Rating Type]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/rankvsRating.png)
 
 
 Dashboard: EDA based on mechanics
