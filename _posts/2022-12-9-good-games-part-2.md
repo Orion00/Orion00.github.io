@@ -7,7 +7,7 @@ image: "/assets/images/AIGenerated/DALL-E/LoadedDie.png"
 ---
 # Introduction
 
-In this installment, I'll talk you through jungle of the Exploratory Data Analysis I went through to discover the legendary city of gold: insights about popular board games. If you're curious where this data came from, check out my [other](/_posts/2022-11-17-good-games-part-1.md) post here.
+In this installment, I'll talk you through jungle of the Exploratory Data Analysis I went through to discover the legendary city of gold: insights about popular board games. If you're curious where this data came from, check out my [other](https://orion00.github.io/tinyproject/2022/11/17/good-games-part-1.html) post here.
 
 The purposes of this post are
 
@@ -64,6 +64,7 @@ I was also curious if games had gotten longer over the years. Ignoring games fro
 
 ![Year Published vs Playing Time]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/yearvsPlayTime.png)
 
+
 ## Insight: Some games are really expensive
 
 Similar to playing time, there are some impressive outliers in the price department of these games.
@@ -76,15 +77,17 @@ Do you see the price of some of those games? $800 for some cardboard? While I do
 
 In addition to some interesting outliers, this plot does answer another question I had. Do games go up in price as the years go on? I would say yes, there is some sort of trend upward there. Is it a significant amount when considering inflation? I'm not sure. But my gut says yes, prices are going up.
 
+
 ## Insight: Some mechanics are more popular than others
 
 Finally! My initial question. What mechanics are the most popular? For fun I decided to make the same plot with the 500 top games, 100 top games, and 50 top games Board Game Geek has to offer. 
 
-[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics500.png" style="width:60%px;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics500.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics100.png" style="width:80%;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics100.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics50.png" style="width:100%;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics50.png)
+[<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics500.png" style="width:80%px;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics500.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics100.png" style="width:80%;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics100.png) [<img src="{{site.url}}/{{site.baseurl}}/assets/images/goodgames/mostFreqMechanics50.png" style="width:80%;margin: auto;"/>](/assets/images/goodgames/mostFreqMechanics50.png)
 
 Some mechanics shifted up while others shifted down. As the games got higher rated, Solo games, Variable Setup, and End Game bonuses went up. More interesting were Income and Hexagon Grid based games. They went from not appearing on the list for 500 games, to ranks 6 and 8 for 50 games. That makes me think one two things. First, it's a fluke. The top games happen to all have the same mechanics. Second, (and more likely to me), the mechanics are fun but aren't super common. Using that intuition, I'll be checking out some Income and/or Hexagon Grid based games.
 
 Some mechanics did stay on all three plots. Hand management, Variable Player Powers (one of my personal favorite mechanics), Dice Rolling, and Variable Set up all survived the cuts. Once again, I've got a few ideas as to why. First, they're fun mechanics. All 4 add randomization and longevity to a game, two important factors for a rating. Second, Those are very common mechanics. It's hard for me to think of a game that doesn't include at least one of those 4 mechanics (Arkham Horror has 3). Based on those thoughts, I feel those mechanics appeared on all three plots because they're more frequent than the mechanics that jumped up as the number of games decreased. Takeaway? Don't worry too much about getting games with those mechanics. Odds are, you'll end up having them no matter what game you try.
+
 
 ## Insight: These variables do not correlate well with each other
 
@@ -96,10 +99,11 @@ Moving past correlation, this graph is an excellent descriptor for how BGG ratin
 
 ![Rank vs Rating by Rating Type]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/rankvsRating.png)
 
+
 # Wrapup
 
 After running through this analysis, I expected to see more useful trends. Honestly, thing still feel pretty murky for me. I guess that makes sense. If getting your game to rank 1 was solved, we'd have a pretty similar looking top 50 list. Instead, there's a wide variety of mechanics, playing times, prices, and player counts for top games. And I can appreciate variety in games.
 
 One thing you may want to know, I think this data is biased. Ratings are primarily by english speaking, board game enthusiasts who care enough about games to write reviews. If you don't fall into that category, the ratings may not work as well for you. Evidently I'm an english speaking board game enthusiast, so those people do exist. Who knows? Maybe I'll get around to writing a review one of these days.
 
-If I were to continue this project, I'd run through some EDA for games with the top mechanics (Hand Management, Variable Player Powers, etc) and see if they're different than games without them. Luckily, that's something you can do if you're curious. You've got access to the [data](https://github.com/Orion00/goodgames/blob/main/data/full_data.csv), [web scraping scripts](https://github.com/Orion00/goodgames/blob/main/datacollection.py), [visualization script](https://github.com/Orion00/goodgames/blob/main/visualizations.py), and a fancy dashboard(link yet to come when fancy dashboard is finished). See what you can find and let me know! There's some pretty great stuff out there if you look hard enough.
+If I were to continue this project, I'd run through some EDA for games with the top mechanics (Hand Management, Variable Player Powers, etc) and see if they're different than games without them. Luckily, that's something you can do if you're curious. You've got access to the ![data](https://github.com/Orion00/goodgames/blob/main/data/full_data.csv), ![web scraping scripts](https://github.com/Orion00/goodgames/blob/main/datacollection.py), ![visualization script](https://github.com/Orion00/goodgames/blob/main/visualizations.py), and a fancy dashboard(link yet to come when fancy dashboard is finished). See what you can find and let me know! There's some pretty great stuff out there if you look hard enough.
