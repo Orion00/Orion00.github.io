@@ -28,6 +28,8 @@ Big shoutout to [Board Game Geek](https://boardgamegeek.com/) for having so much
 ## Phase 1: The Table
 If you click on "Browse," then "[All Boardgames](https://boardgamegeek.com/browse/boardgame)" on the navbar for Board Game Geek, you'll be taken to a sorted list of each game they have in their database conveniently listed in table format.
 
+![Top of Board Game Geek's Highest Rated Games table]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/BGGTopRatingsTable.png)
+
 For phase 1, I had to web scrape the first 500 on that list. After several hours of work in Python's Selenium, I realized I could use Pandas' `read_html()` to turn my hard-fought 30 lines of code into 1 line of code that executed more quickly. Putting my pride on the shelf, I used the simpler option, although I did preserve the code as a monument to my ignorance. 
 
 As it turns out, because the column containing prices varied in formatting, `read_html()` wasn't able to read anything in for it. Thankfully, I was a newfound pro in Selenium, so after a few more hours of testing (and some help from an infamous AI), I was able to finish with a function that saved both types of prices if they existed in the table.
@@ -48,6 +50,10 @@ Almost all the data cleaning was done as the data was being scraped and retrieve
 My biggest banes while cleaning were definitely the title, year, and prices columns. `read_html()` read in the game's name, year, and description as one column, so I had to use regex to grab what I needed. The award of "most troubling titles" go to "Pulsar 2849," "1960: The Making of the President," and "Bruxelles 1893" because they contain a year as well. The award of "most vexing years" goes to "Go," reportedly released in year -2200. Thankfully, regex is one powerful dishsoap when it comes to data cleaning.
 
 Mechanics are stored in both a column of lists as well as one hot encoded at the end of the data. Why? Because I'm not sure which will be easier to work with when it comes to visualizations.
+
+If you're curious, this is what the final data ended up looking like.
+
+![Board Game Geek API logo]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/full_data_head.png)
 
 # Ethical Considerations
 
