@@ -30,7 +30,7 @@ If you click on "Browse," then "[All Boardgames](https://boardgamegeek.com/brows
 
 ![Top of Board Game Geek's Highest Rated Games table]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/BGGTopRatingsTable.png)
 
-For phase 1, I had to web scrape the first 500 on that list. After several hours of work in Python's Selenium, I realized I could use Pandas' `read_html()` to turn my hard-fought 30 lines of code into 1 line of code that executed more quickly. Putting my pride on the shelf, I used the simpler option, although I did preserve the code as a monument to my ignorance. 
+For phase 1, I had to web scrape the first 500 games on that list. After several hours of work in Python's Selenium, I realized I could use Pandas' `read_html()` to turn my hard-fought 30 lines of code into 1 line of code that executed more quickly. Putting my pride on the shelf, I used the simpler option, although I did preserve the code as a monument to my ignorance. 
 
 As it turns out, because the column containing prices varied in formatting, `read_html()` wasn't able to read anything in for it. Thankfully, I was a newfound pro in Selenium, so after a few more hours of testing (and some help from an infamous AI), I was able to finish with a function that saved both types of prices if they existed in the table.
 
