@@ -53,7 +53,7 @@ Mechanics are stored in both a column of lists as well as one hot encoded at the
 
 If you're curious, this is what the final data ended up looking like.
 
-![Board Game Geek API logo]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/full_data_head.png)
+![Head of cleaned data from BGG]({{site.url}}/{{site.baseurl}}/assets/images/goodgames/full_data_head.png)
 
 # Ethical Considerations
 
